@@ -1,5 +1,4 @@
 import acm.graphics.GPoint;
-import sun.text.resources.ro.CollationData_ro;
 
 import java.awt.*;
 
@@ -13,11 +12,6 @@ public class Preferences {
 
     public static final int NUM_CELLS_TALL = 50;
     public static final int NUM_CELLS_WIDE = 50;
-
-    public static final int WINDOW_BOARDER_TOP = 0;
-    public static final int WINDOW_BOARDER_BOTTOM = 0;
-    public static final int WINDOW_BOARDER_LEFT = 0;
-    public static final int WINDOW_BOARDER_RIGHT = 0;
 
     public static final Color BACKGROUND_COLOR = new Color(0x00004d);
     public static final Color BALL_COLOR = new Color(0x107595);

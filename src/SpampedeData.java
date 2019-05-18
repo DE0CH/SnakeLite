@@ -1,10 +1,6 @@
-import acm.graphics.GObject;
 import acm.graphics.GOval;
 import acm.graphics.GRect;
-import com.sun.xml.internal.bind.v2.TODO;
-import javafx.scene.control.Cell;
 
-import java.lang.Math;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
@@ -27,7 +23,7 @@ enum CellType {
     private final String displayChar;
 
     // Private constructor for the enumeration
-    private CellType(String inputChar) {
+    CellType(String inputChar) {
         this.displayChar = inputChar;
     }
 
@@ -422,12 +418,6 @@ public class SpampedeData {
         }
     }
 
-    /**
-     * Picks an initial movement mode for the snake.
-     */
-    public void setStartDirection() {
-        this.setDirectionEast();
-    }
 
     /* ------------------- */
     /* snake Access Methods */
@@ -479,7 +469,7 @@ public class SpampedeData {
         // Step 1: unlabel the head
         this.snakeCells.getLast().becomeBody();
         // Step 2: reverse the body parts
-        LinkedList<BoardCell> temp_reverseCells = new LinkedList<BoardCell>();
+        LinkedList<BoardCell> temp_reverseCells = new LinkedList<>();
         for (int i=this.snakeCells.size()-1; i>=0; i--) {
             temp_reverseCells.add(this.snakeCells.get(i));
         }
@@ -559,13 +549,13 @@ public class SpampedeData {
         // Initialize the cellsToSearch queue with the snake head;
         // as with any cell, we mark the head cells as having been added
         // to the queue
-        Queue<BoardCell> cellsToSearch = new LinkedList<BoardCell>();
+        Queue<BoardCell> cellsToSearch = new LinkedList<>();
         BoardCell snakeHead = getSnakeHead();
         snakeHead.setAddedToSearchList();
         cellsToSearch.add(snakeHead);
 
         // Variable to hold the closest spam cell, once we've found it.
-        BoardCell closestSpamCell = null;
+        BoardCell closestSpamCell;
 
         // Search!
         outerLoop:
@@ -670,14 +660,14 @@ class BoardCell {
                 Preferences.SNAKEBODY_SIZE,
                 Preferences.SNAKEBODY_SIZE
         );
-        ((GRect)rec).setFilled(true);
+        rec.setFilled(true);
         rec.setColor(Preferences.SNAKEBODY_COLOR);
         oval = new GOval((this.getColumn() -1) * Preferences.SNAKEBODY_SIZE,
                 (this.getRow() - 1) * Preferences.SNAKEBODY_SIZE,
                 Preferences.BALL_SIZE,
                 Preferences.BALL_SIZE
         );
-        ((GOval)oval).setFilled(true);
+        oval.setFilled(true);
         oval.setColor(Preferences.BALL_COLOR);
 
     }

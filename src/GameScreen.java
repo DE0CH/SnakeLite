@@ -11,15 +11,7 @@ import java.util.Scanner;
 
 
 public class GameScreen implements Page, ActionListener {
-    public enum Directions {
-        GOING_UP,
-        GOING_DOWN,
-        GOING_LEFT,
-        GOING_RIGHT;
-    }
-    private Directions direction;
 
-    /** the last element is the head. */
 
     private SpampedeData data;
 
@@ -34,8 +26,7 @@ public class GameScreen implements Page, ActionListener {
     private GLabel pauseMessage;
 
     private boolean isPlaying;
-    private Scoreboard scoreLabel;
-    
+
     public void start() {
         data = new SpampedeData();
         scoreboard = new Scoreboard(Preferences.SCOREBOARD_POSITION);
@@ -109,10 +100,10 @@ public class GameScreen implements Page, ActionListener {
     public void inputHandle(InputEvent e) {
         if (!(e instanceof KeyEvent)) return;
         if (((KeyEvent) e).getKeyChar() == 'a') {
-            counsoleAsk();
+            consoleAsk();
         }
         if (((KeyEvent) e).getKeyChar() == 's') {
-            counsoleAddSpam();
+            consoleAddSpam();
         }
         if (data.getSnakeMode() == SpampedeData.SnakeMode.AI_MODE) {
             return;
@@ -193,7 +184,7 @@ public class GameScreen implements Page, ActionListener {
         timer.stop();
         Access.game.gameOver();
     }
-    private void counsoleAsk() {
+    private void consoleAsk() {
         System.out.println("Change Speed: ");
         Scanner scan = new Scanner(System.in);
         try {
@@ -202,7 +193,7 @@ public class GameScreen implements Page, ActionListener {
             System.err.println("invalid input");
         }
     }
-    private void counsoleAddSpam() {
+    private void consoleAddSpam() {
         System.out.println("Add Length: ");
         Scanner scan = new Scanner(System.in);
         int lengthToAdd = scan.nextInt();

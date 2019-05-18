@@ -1,9 +1,11 @@
+import acm.graphics.GLabel;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 
 public class WelcomeScreen implements Page {
-    private Instructions instructions;
+    private GLabel instructions;
     private Button startButton;
     public synchronized void start() {
         this.setUpLabels();
@@ -22,7 +24,7 @@ public class WelcomeScreen implements Page {
 
     }
     private void setUpLabels() {
-        instructions = new Instructions(Preferences.INSTRUCTIONS_MESSAGE);
+        instructions = new GLabel(Preferences.INSTRUCTIONS_MESSAGE);
         instructions.setColor(Preferences.INSTRUCTIONS_COLOR);
         instructions.setFont(Preferences.INSTRUCTIONS_FONT);
         instructions.setLocation(

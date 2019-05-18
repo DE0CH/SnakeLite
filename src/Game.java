@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import acm.graphics.GOval;
-import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 
 public class Game extends GraphicsProgram implements ActionListener {
@@ -25,7 +23,7 @@ public class Game extends GraphicsProgram implements ActionListener {
 		try {
 			Thread.sleep(400);
 		} catch(InterruptedException e) {
-
+			e.printStackTrace();
 		}
 		begin();
 	}
@@ -69,19 +67,6 @@ public class Game extends GraphicsProgram implements ActionListener {
 		currentPage.inputHandle(e);
 	}
 
-
-
-	private void moveUp() {
-	}
-
-	private void moveDown() {
-	}
-
-	private void moveLeft() {
-	}
-
-	private void moveRight() {
-	}
 
 	public void actionPerformed(ActionEvent arg0) {
 		currentPage.eventHandle(arg0);

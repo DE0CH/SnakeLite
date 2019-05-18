@@ -3,9 +3,7 @@ import acm.graphics.GPoint;
 
 public class Scoreboard extends GLabel {
     private int score;
-    public Scoreboard(double x, double y){
-        this(new GPoint(x, y));
-    }
+
     public Scoreboard(GPoint position) {
         super("Score: 0", 0, 0);
         this.setLocation(position);
@@ -16,7 +14,7 @@ public class Scoreboard extends GLabel {
         score++;
         updateScore();
     }
-    public void updateScore() {
+    private void updateScore() {
         this.setLabel("Score: " + this.score);
     }
 }
